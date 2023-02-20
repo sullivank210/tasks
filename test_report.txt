@@ -6,53 +6,19 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/HtmlCss.test.tsx
-FAIL src/functions.test.ts
-  ● Testing the basic functions › Testing the shout function
-
-    expect(received).toBe(expected) // Object.is equality
-
-    Expected: "HELLO!"
-    Received: "HELLO"
-
-      28 |
-      29 |     test("Testing the shout function", () => {
-    > 30 |         expect(shout("Hello")).toBe("HELLO!");
-         |                                ^
-      31 |         expect(shout("What?")).toBe("WHAT?!");
-      32 |         expect(shout("oHo")).toBe("OHO!");
-      33 |         expect(shout("AHHHH!!!")).toBe("AHHHH!!!!");
-
-      at Object.<anonymous> (src/functions.test.ts:30:32)
-
-  ● Testing the basic functions › Testing the convertYesNo function
-
-    expect(received).toBe(expected) // Object.is equality
-
-    Expected: true
-    Received: null
-
-      48 |     test("Testing the convertYesNo function", () => {
-      49 |         expect(convertYesNo("yes")).toBe(true);
-    > 50 |         expect(convertYesNo("YES")).toBe(true);
-         |                                     ^
-      51 |         expect(convertYesNo("NO")).toBe(false);
-      52 |         expect(convertYesNo("no")).toBe(false);
-      53 |         expect(convertYesNo("Apple")).toBe(null);
-
-      at Object.<anonymous> (src/functions.test.ts:50:37)
-
+PASS src/functions.test.ts
 PASS src/text.test.tsx
 PASS src/App.test.tsx
 --------------|---------|----------|---------|---------|-------------------
 File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------|---------|----------|---------|---------|-------------------
-All files     |   94.44 |    92.85 |     100 |   94.44 |                   
+All files     |     100 |      100 |     100 |     100 |                   
  App.tsx      |     100 |      100 |     100 |     100 |                   
- functions.ts |   93.75 |    92.85 |     100 |   93.75 | 53                
+ functions.ts |     100 |      100 |     100 |     100 |                   
 --------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 1 failed, 3 passed, 4 total
-Tests:       2 failed, 12 passed, 14 total
+Test Suites: 4 passed, 4 total
+Tests:       14 passed, 14 total
 Snapshots:   0 total
-Time:        3.867 s
+Time:        3.016 s
 Ran all test suites.
