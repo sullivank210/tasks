@@ -117,15 +117,4 @@ export function injectPositive(values: number[]): number[] {
     );
     i === -1 ? inject.push(sum) : inject.splice(i + 1, 0, sum);
     return inject;
-    //return i === -1 ? [...values, sum] : copyVals.splice(i, 0, sum);
-    // const sum: number =
-    //     i === -1
-    //         ? values.reduce((total: number, num: number) => total + num, 0)
-    //         : values
-    //               .slice(0, i)
-    //               .reduce((total: number, num: number) => total + num, 0);
-    // i !== -1
-    //     ? (values = values.splice(i + 1, 0, sum))
-    //     : (values = [...values, sum]);
-    // return ;
 }
