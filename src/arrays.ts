@@ -1,3 +1,4 @@
+/* eslint-disable no-extra-parens */
 import { isQuestion } from "./functions";
 
 /**
