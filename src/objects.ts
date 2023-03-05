@@ -86,7 +86,7 @@ export function toMarkdown(question: Question): string {
               "\n" +
               question.body +
               question.options.reduce(
-                  (listOpt: string, prevOpt, string): string =>
+                  (listOpt: string, prevOpt: string): string =>
                       (listOpt += "\n- " + prevOpt),
                   ""
               )
