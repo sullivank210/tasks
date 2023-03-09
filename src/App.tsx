@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Col, Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
-import cuteTurtle from "./cuteTurtle.png";
 import "./App.css";
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
