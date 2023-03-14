@@ -16,13 +16,12 @@ const PEOPLE = [
 ];
 
 function chooseMember(newMember: string, { team, setTeam }: teamProps) {
-    return setTeam(
-        !team.includes(newMember) ? [...team, newMember] : [...team]
-    );
+    !team.includes(newMember)
+        ? setTeam([...team, newMember])
+        : setTeam([...team]);
 }
 
 export function ChooseTeam(): JSX.Element {
-    //const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
     const clearTeam = () => setTeam([]);
