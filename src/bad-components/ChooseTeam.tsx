@@ -16,9 +16,7 @@ const PEOPLE = [
 ];
 
 function chooseMember(newMember: string, { team, setTeam }: teamProps) {
-    !team.includes(newMember)
-        ? setTeam([...team, newMember])
-        : setTeam([...team]);
+    setTeam(!team.includes(newMember) ? [...team, newMember] : [...team]);
 }
 
 export function ChooseTeam(): JSX.Element {
