@@ -25,6 +25,7 @@ export function MultipleChoiceQuestion({
 
     return (
         <div>
+            <h3>Multiple Choice Question</h3>
             <Form.Group controlId="multipleChoiceOptions">
                 <Form.Label>Select an answer from the list:</Form.Label>
                 <Form.Select value={choice} onChange={updateChoice}>
@@ -36,7 +37,6 @@ export function MultipleChoiceQuestion({
                 </Form.Select>
             </Form.Group>
             {choice === expectedAnswer ? "✔️" : "❌"}
-            <h3>Multiple Choice Question</h3>
         </div>
     );
 }
