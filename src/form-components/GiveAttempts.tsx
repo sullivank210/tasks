@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 /*
-The GiveAttempts component simulates a user taking a quiz with a limited number of attempts, but also provides a way for them to gain as many attempts as they want via a numeric input box.
+The GiveAttempts component simulates a user taking a quiz with a limited number of attempts, but also provides a way 
+for them to gain as many attempts as they want via a numeric input box.
 
 - You will need a state to represent the number of attempts the user has left, and another state to represent 
     the number of attempts they are requesting.
@@ -16,9 +18,35 @@ The GiveAttempts component simulates a user taking a quiz with a limited number 
 - When the user is out of attempts, the use button should be disabled
 */
 export function GiveAttempts(): JSX.Element {
+    const [remaining, setRemaining] = useState<number>(3);
+    const [requested, setRequested] = useState<string>("0");
+
+    const checkNumerical = parseInt(requested) || 0;
+
+    function updateRequested(event: React.ChangeEvent<HTMLInputElement>) {
+        setRequested(event.target.value);
+    }
     return (
         <div>
             <h3>Give Attempts</h3>
+            Number attempts remaining: {remaining}
+            <Form.Group controlId="requestAttempts">
+                <Form.Label>Request attempts:</Form.Label>
+                <Form.Control
+                    type="number"
+                    value={requested}
+                    onChange={updateRequested}
+                ></Form.Control>
+            </Form.Group>
+            <Button
+                onClick={() => setRemaining(remaining - 1)}
+                disabled={remaining === 0}
+            >
+                Use
+            </Button>
+            <Button onClick={() => setRemaining(checkNumerical + remaining)}>
+                Gain
+            </Button>
         </div>
     );
 }
