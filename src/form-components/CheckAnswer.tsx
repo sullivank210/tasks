@@ -14,7 +14,7 @@ export function CheckAnswer({
 
     return (
         <div>
-            <Form.Group controlId="formAnswer">
+            <Form.Group controlId="enter-answer-textbox">
                 <Form.Label>Enter answer:</Form.Label>
                 <Form.Control value={answer} onChange={updateAnswer} />
             </Form.Group>
