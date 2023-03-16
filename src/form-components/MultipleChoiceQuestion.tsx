@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 
 /* 
 The MultipleChoiceQuestions component allows a user to select an answer from a list in a dropdown, and then displays 
@@ -16,8 +17,25 @@ export function MultipleChoiceQuestion({
     options: string[];
     expectedAnswer: string;
 }): JSX.Element {
+    const [choice, setChoice] = useState<string>(options[0]);
+
+    function updateChoice(event: React.ChangeEvent<HTMLSelectElement>) {
+        setChoice(event.target.value);
+    }
+
     return (
         <div>
+            <Form.Group controlId="multipleChoiceOptions">
+                <Form.Label>Select an answer from the list:</Form.Label>
+                <Form.Select value={choice} onChange={updateChoice}>
+                    {options.map((option: string) => (
+                        <option key={option} value={option}>
+                            {option}
+                        </option>
+                    ))}
+                </Form.Select>
+            </Form.Group>
+            {choice === expectedAnswer ? "✔️" : "❌"}
             <h3>Multiple Choice Question</h3>
         </div>
     );

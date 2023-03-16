@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 
 /*
 The EditMode component has two states controlled by a switch: the default state shows text indicating the user’s name 
